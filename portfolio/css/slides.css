@@ -1,0 +1,92 @@
+/* 섹션별 레이아웃 보조 스타일 */
+.hero,
+.about-card,
+.timeline-section,
+.service-grid,
+.cta-card {
+    position: relative;
+}
+
+.section-accent {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    border: 1px dashed rgba(150, 199, 231, 0.25);
+    pointer-events: none;
+}
+
+.portfolio-highlight {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+}
+
+.portfolio-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.portfolio-card img {
+    border-radius: var(--radius-md);
+}
+
+.portfolio-card h3 {
+    font-size: 1.5rem;
+}
+
+.portfolio-card .tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.portfolio-card .tag {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.04);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.experience-card {
+    padding: 32px;
+    border-radius: var(--radius-md);
+    background: #fff;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.experience-card strong {
+    font-size: 1.2rem;
+}
+
+.experience-card span {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.mini-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.mini-social a {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+

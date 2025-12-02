@@ -1,0 +1,124 @@
+/* 반응형 포트폴리오 */
+@media (max-width: 1100px) {
+    .header-inner {
+        gap: 20px;
+    }
+
+    .site-nav {
+        gap: 18px;
+    }
+
+    .hero {
+        gap: 40px;
+    }
+
+    .about-card {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-highlight,
+    .experience-grid,
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 880px) {
+    .nav-toggle {
+        display: inline-flex;
+    }
+
+    .site-nav {
+        position: absolute;
+        top: 72px;
+        left: 24px;
+        right: 24px;
+        background: #fff;
+        flex-direction: column;
+        padding: 24px;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity var(--transition), transform var(--transition);
+    }
+
+    .site-nav.is-open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+    }
+
+    .hero-photo {
+        order: -1;
+    }
+
+    .grid-two {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .cta-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 0 16px 80px;
+    }
+
+    .page-section {
+        padding: 52px 0;
+    }
+
+    .header-inner {
+        padding: 16px;
+    }
+
+    .site-nav {
+        left: 16px;
+        right: 16px;
+    }
+
+    .hero-copy h1 {
+        font-size: 2.4rem;
+    }
+
+    .cta-group,
+    .social-links {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .stat-list {
+        flex-direction: column;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-highlight,
+    .experience-grid,
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .scroll-top {
+        right: 18px;
+        bottom: 18px;
+    }
+}

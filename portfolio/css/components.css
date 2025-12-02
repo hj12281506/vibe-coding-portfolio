@@ -1,0 +1,344 @@
+/* 포트폴리오 공통 컴포넌트 */
+.site-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(18px);
+    background: rgba(248, 248, 251, 0.9);
+    z-index: 10;
+    box-shadow: none;
+    transition: box-shadow var(--transition), background var(--transition);
+}
+
+.site-header.is-sticky {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.header-inner {
+    width: min(100%, var(--max-width));
+    margin: 0 auto;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
+}
+
+.brand span {
+    color: var(--accent);
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.site-nav a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--muted);
+    transition: color var(--transition);
+}
+
+.site-nav a.is-active,
+.site-nav a:hover {
+    color: var(--ink);
+}
+
+.nav-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-toggle span,
+.nav-toggle::before,
+.nav-toggle::after {
+    content: '';
+    width: 18px;
+    height: 2px;
+    background: var(--ink);
+    display: block;
+    border-radius: 999px;
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav-toggle::before { transform: translateY(-5px); }
+.nav-toggle::after { transform: translateY(5px); }
+
+.nav-toggle[aria-expanded="true"]::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"]::after {
+    transform: translateY(-2px) rotate(-45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span {
+    opacity: 0;
+}
+
+/* 히어로 */
+.hero {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 60px;
+    align-items: center;
+    padding-top: 120px;
+}
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.hero-copy h1 {
+    font-size: clamp(2.8rem, 4vw, 3.8rem);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+.hero-copy p {
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.hero-photo {
+    position: relative;
+    justify-self: center;
+}
+
+.hero-photo::before {
+    content: '';
+    position: absolute;
+    inset: -24px;
+    border-radius: var(--radius-lg);
+    border: 2px dashed rgba(255, 79, 97, 0.4);
+}
+
+.hero-photo img {
+    border-radius: var(--radius-lg);
+    box-shadow: 0 40px 60px rgba(15, 23, 42, 0.18);
+}
+
+.hero-badge {
+    position: absolute;
+    left: -60px;
+    bottom: 30px;
+    background: #fff;
+    border-radius: var(--radius-md);
+    padding: 18px 22px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hero-badge strong {
+    font-size: 1.4rem;
+}
+
+/* 소개 카드 */
+.about-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-photo {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+}
+
+.about-photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.stat-list {
+    display: flex;
+    gap: 28px;
+    font-weight: 600;
+}
+
+.stat-list span {
+    display: block;
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.info-item {
+    padding: 16px 18px;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: var(--radius-sm);
+}
+
+.info-item label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+}
+
+/* 경험 타임라인 */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 30px;
+    align-items: center;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+.timeline-year {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    color: var(--muted);
+}
+
+/* 서비스 카드 */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.service-card {
+    background: var(--surface);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.service-card h4 {
+    font-size: 1.3rem;
+}
+
+.service-card ul {
+    list-style: none;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* CTA */
+.cta-card {
+    background: linear-gradient(135deg, #e0f2fe, #bfdbfe);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.cta-card p {
+    color: rgba(31, 31, 41, 0.8);
+}
+
+/* 푸터 */
+footer {
+    padding: 80px 24px 60px;
+    text-align: center;
+    color: var(--muted);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+/* 스크롤 탑 버튼 */
+.scroll-top {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 45px rgba(37, 99, 235, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition), transform var(--transition);
+}
+
+.scroll-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-6px);
+}
+
